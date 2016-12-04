@@ -1,0 +1,10 @@
+﻿@model MvcDropDownSample.Models.ProductViewModel
+
+
+<h2>Test</h2>
+
+<div>
+    <div class="row"><label class="col-xs-2">Name:</label><div class="col-md-9">@Model.Name</div></div>
+    <div class="row"><label class="col-xs-2">Category:</label><div class="col-md-9">@(Model.Category?.CategoryName ?? "")</div></div>
+    <br />
+</div>

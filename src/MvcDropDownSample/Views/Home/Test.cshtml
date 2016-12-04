@@ -1,0 +1,22 @@
+﻿@model MvcDropDownSample.Models.ProductViewModel
+
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Test Drop Down</h2>
+
+@using (Html.BeginForm("TestFilled", "Home", FormMethod.Post))
+{
+    <div class="row form-group">
+        @Html.LabelFor(model => model.SelectedCategoryId, "Category:", new {@class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.SelectedCategoryId, new SelectList(Model.Categories, "CategoryId", "CategoryName"), "- Please Select -")
+            @Html.ValidationMessageFor(model => model.SelectedCategoryId)
+        </div>
+    </div>
+
+    <br/>
+
+    <input type="submit" value="Submit" />
+}
